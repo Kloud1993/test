@@ -28,11 +28,11 @@ jobs:
 
       - name: Pull image from Docker Hub
         run: |
-          docker pull node:18-alpine
+          docker pull my-node-app:latest
 
       - name: Tag Docker image
         run: |
-          docker tag node:18-alpine ${{ secrets.ACR_NAME }}.azurecr.io/my-node-app:latest
+          docker tag my-node-app:latest ${{ secrets.ACR_NAME }}.azurecr.io/my-node-app:latest
 
       - name: Push to ACR
         run: |
